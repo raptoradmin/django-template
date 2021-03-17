@@ -54,6 +54,13 @@ ROOT_URLCONF = 'mainsite.urls'
 
 TEMPLATES = [
 	{
+		'BACKEND': 'django.template.backends.jinja2.Jinja2',
+		'DIRS': [ BASE_DIR / 'jinja2/' ],
+		'APP_DIRS': True,
+		'OPTIONS': {
+			'environment': 'mainsite.jinja2.environment'
+		},
+	},{
 		'BACKEND': 'django.template.backends.django.DjangoTemplates',
 		'DIRS': [],
 		'APP_DIRS': True,
@@ -65,7 +72,7 @@ TEMPLATES = [
 				'django.contrib.messages.context_processors.messages',
 			],
 		},
-	},
+	}
 ]
 
 WSGI_APPLICATION = 'mainsite.wsgi.application'
